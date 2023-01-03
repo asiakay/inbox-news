@@ -89,15 +89,15 @@ app.set("view engine", "html");
 
 app.use(express.urlencoded({ extended: false }));
 
-/* app.use("/assets", express.static(__dirname + "/assets"));
- */
+app.use("/assets", express.static(__dirname + "/assets"));
 
-app.use(express.static('public'))
+
+// app.use(express.static('public'))
 
   /*  Deployment to vercel prep */
-app.get('/', (req, res) => {
+/* app.get('/', (req, res) => {
   res.sendFile('index.html', {root: path.join(__dirname, 'public')});
-})
+}) */
 
 app.get("/", (req, res) => res.redirect("/posts/top"));
 
