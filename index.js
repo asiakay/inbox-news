@@ -1,5 +1,7 @@
+/* Deployment as serverless function prep */
 const express = require("express");
 const app = express();
+module.exports = app
 
 const session = require("express-session");
 const { create } = require("express-handlebars");
@@ -83,9 +85,19 @@ const hbs = create({
 app.engine("html", hbs.engine);
 app.set("view engine", "html");
 
+
+
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/assets", express.static(__dirname + "/assets"));
+/* app.use("/assets", express.static(__dirname + "/assets"));
+ */
+
+app.use(express.static('public'))
+
+  /*  Deployment to vercel prep */
+app.get('/', (req, res) => {
+  res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+})
 
 app.get("/", (req, res) => res.redirect("/posts/top"));
 
