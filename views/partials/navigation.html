@@ -1,0 +1,55 @@
+{{#if loggedIn}}
+
+<!-- <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div> -->
+
+
+
+
+
+
+
+
+
+<!--       
+  <a href="/writePost">New Post</a>
+      
+  <form class="d-flex" 
+    role="logout" 
+    action="/logout" 
+    method="post">
+    
+    <input class="form-control me-2" 
+      type="submit" value="Log Out" />
+     
+    <button class="btn btn-outline-success"                     type="submit">Search</button>
+      </form> -->
+
+<!-- <div class="accountInfo" tabindex="0">
+    <span class="accountUsername">{{account.username}}</span> 
+
+    
+    <div class="accountDropdown">
+      <a href="/">Home</a>
+      <a href="/writePost">New Post</a>
+      <form action="/logout" method="post">
+        <input type="submit" value="Log Out" />
+      </form>
+    </div>
+  </div>
+-->
+{{else}}
+
+  <div class="accountLogInLink">
+    <a href="/logIn">Log In</a>
+    </div
+  </div>
+{{/if}}

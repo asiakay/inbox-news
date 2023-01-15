@@ -22,6 +22,8 @@ const downvotePost = require("./routes/downvotePost.js");
 const deletePost = require("./routes/deletePost.js");
 const deleteComment = require("./routes/deleteComment.js");
 
+const path = require('path');
+
 (async () => {
   if (process.env.ADD_ADMIN) {
     const account = await accounts.getAccountByUsername(process.env.ADD_ADMIN);
@@ -47,6 +49,7 @@ const deleteComment = require("./routes/deleteComment.js");
     console.log("Successfully removed admin");
   }
 })();
+
 
 app.use(express.json());
 
@@ -88,6 +91,8 @@ app.set("view engine", "html");
 
 
 app.use(express.urlencoded({ extended: false }));
+
+app.use('/assets', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
 
 app.use("/assets", express.static(__dirname + "/assets"));
 
